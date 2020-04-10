@@ -16,4 +16,6 @@ RUN set -eux && \
     mkdir -p /var/lib/python35 && cd Python-3.5.4 && \
     ./configure --prefix=/var/lib/python35 --enable-shared && \
     make && make install && \
-    sh -c "echo /var/lib/python35/lib > /etc/ld.so.conf.d/py35.conf" && ldconfig
+    sh -c "echo /var/lib/python35/lib > /etc/ld.so.conf.d/py35.conf" && ldconfig && \
+    sh -c "echo /usr/lib/oracle/18.3/client64/lib > /etc/ld.so.conf.d/oracle-instantclient.conf" && \
+    ldconfig
